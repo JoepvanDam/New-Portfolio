@@ -7,6 +7,8 @@ import darkModeSwitch from "./modules/darkmode.js";
 import setMoonPhase from "./modules/moonPhase.js";
 import openSettings from "./modules/settings.js";
 import switchTabs from "./modules/tabSwitch.js";
+import updateDates from "./modules/dates.js";
+import sendPlane from "./modules/planes.js";
 
 // Adding necessary functions to scope
 window.updateStickyTalks = updateStickyTalks;
@@ -17,6 +19,7 @@ window.switchProjects = switchProjects;
 window.openSettings = openSettings;
 window.openProject = openProject;
 window.switchTabs = switchTabs;
+window.sendPlane = sendPlane;
 
 // Global variables
 var currentTalkNum = 0;
@@ -34,6 +37,7 @@ function checkPortrait() {
 // On start
 //darkModeSwitch(true);
 updateStickyTalks(0);
-//switchTabs(1);
+switchTabs(2);
 checkPortrait();
 switchProjects(0);
+updateDates();

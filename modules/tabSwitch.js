@@ -1,5 +1,10 @@
-var currentTab = 0;
+var currentTab = 0, moving = false;
 export default function switchTabs(tabNum) {
+    if (currentTab == tabNum || moving) { return }
+    currentTab = tabNum;
+    moving = true;
+    setTimeout(() => { moving = false; }, 1000);
+
     // Side tab (nav) vars
     var tab1 = document.getElementById("tab1");
     var tab2 = document.getElementById("tab2");
@@ -16,7 +21,8 @@ export default function switchTabs(tabNum) {
     var projectFlat = document.getElementById("projectFlat");
 
     // About page vars
-    // ...
+    var planeTower = document.getElementById("planeTower");
+    var planeControl = document.getElementById("planeControl");
 
     // Contact page vars
     // ...
@@ -27,135 +33,90 @@ export default function switchTabs(tabNum) {
     tab3.classList.remove("currentTab");
     tab4.classList.remove("currentTab");
 
-    // On homepage
-    if (currentTab == 0) {
-        if (tabNum == 0) { return }
+    // Plan:
+    // 0
+    // | House | Projects About Contact
+    // 1
+    // House | Projects | About Contact
+    // 2
+    // House Projects | About | Contact
+    // 3
+    // House Projects About | Contact |
 
-        // Always move homepage away to the left
-        house.style.right = "calc(100% + 200px)";
-        langchange.style.left = "-400px";
-        lamp.style.right = "calc(150% + 100px)";
-        sticky.style.right = "calc(125% + 100px)";
+    if (tabNum == 0) {
+        // House in view
+        house.style.right = 'calc(50% - 200px)';
+        lamp.style.right = 'calc(30% - 100px)';
+        langchange.style.left = '50px';
+        sticky.style.right = 'calc(50% + 27.5px)';
 
-        // To projects page
-        if (tabNum == 1) {
-            projectFlat.style.right = "calc(50% - 250px)";
+        // Projects right 1
+        projectFlat.style.right = "calc(-50% + 250px)";
 
-            currentTab = 1;
-            tab2.classList.add("currentTab");
-        }
+        // About right 2
+        planeTower.style.right = "calc(-150% + 250px)";
+        planeControl.style.right = "calc(-150% + 250px)";
 
-        // To about page
-        else if (tabNum == 2) {
-            projectFlat.style.right = "calc(150% - 250px)";
+        // Contact right 3
 
-            currentTab = 2;
-            tab3.classList.add("currentTab");
-        }
-
-        // To contact page
-        else if (tabNum == 3) {
-            projectFlat.style.right = "calc(150% - 250px)";
-
-            currentTab = 3;
-            tab4.classList.add("currentTab");
-        }
+        // Set currentTab to tabNum
+        tab1.classList.add("currentTab");
     }
+    else if (tabNum == 1) {
+        // House left 1
+        house.style.right = 'calc(150% - 200px)';
+        lamp.style.right = 'calc(130% - 100px)';
+        langchange.style.left = 'calc(-100% + 50px)';
+        sticky.style.right = 'calc(150% + 27.5px)';
 
-    // On projects page
-    else if (currentTab == 1) {
-        if (tabNum == 1) { return }
+        // Projects in view
+        projectFlat.style.right = "calc(50% - 250px)";
 
-        // To home page
-        if (tabNum == 0) {
-            projectFlat.style.right = "calc(-40% - 250px)";
+        // About right 1
+        planeTower.style.right = "calc(-50% + 250px)";
+        planeControl.style.right = "calc(-50% + 250px)";
 
-            house.style.right = "calc(50% - 200px)";
-            langchange.style.left = "50px";
-            lamp.style.right = "calc(30% - 100px)";
-            sticky.style.right = "calc(50% + 27.5px)";
+        // Contact right 2
 
-            currentTab = 0;
-            tab1.classList.add("currentTab");
-        }
-
-        // To about page
-        else if (tabNum == 2) {
-            projectFlat.style.right = "calc(150% - 250px)";
-
-            currentTab = 2;
-            tab3.classList.add("currentTab");
-        }
-
-        // To contact page
-        else if (tabNum == 3) {
-            projectFlat.style.right = "calc(150% - 250px)";
-
-            currentTab = 3;
-            tab4.classList.add("currentTab");
-        }
+        // Set currentTab to tabNum
+        tab2.classList.add("currentTab");
     }
+    else if (tabNum == 2) {
+        // House left 2
+        house.style.right = 'calc(250% - 200px)';
+        lamp.style.right = 'calc(230% - 100px)';
+        langchange.style.left = 'calc(-200% + 50px)';
+        sticky.style.right = 'calc(250% + 27.5px)';
 
-    // On about page
-    else if (currentTab == 2) {
-        if (tabNum == 2) { return }
+        // Projects left 1
+        projectFlat.style.right = "calc(150% - 250px)";
 
-        // To home page
-        if (tabNum == 0) {
-            projectFlat.style.right = "calc(-40% - 250px)";
+        // About in view
+        planeTower.style.right = "calc(15% - 250px)";
+        planeControl.style.right = "calc(50% - 250px)";
 
-            house.style.right = "calc(50% - 200px)";
-            langchange.style.left = "50px";
-            lamp.style.right = "calc(30% - 100px)";
-            sticky.style.right = "calc(50% + 27.5px)";
+        // Contact right 1
 
-            currentTab = 0;
-            tab1.classList.add("currentTab");
-        }
-
-        // To projects page
-        else if (tabNum == 1) {
-            projectFlat.style.right = "calc(50% - 250px)";
-
-            currentTab = 1;
-            tab2.classList.add("currentTab");
-        }
-
-        // To contact page
-        else if (tabNum == 3) {
-            currentTab = 3;
-            tab4.classList.add("currentTab");
-        }
+        // Set currentTab to tabNum
+        tab3.classList.add("currentTab");
     }
+    else if (tabNum == 3) {
+        // House left 3
+        house.style.right = 'calc(350% - 200px)';
+        lamp.style.right = 'calc(330% - 100px)';
+        langchange.style.left = 'calc(-300% + 50px)';
+        sticky.style.right = 'calc(350% + 27.5px)';
 
-    // On contact page
-    else if (currentTab == 3) {
-        if (tabNum == 3) { return }
+        // Projects left 2
+        projectFlat.style.right = "calc(250% - 250px)";
 
-        // To home page
-        if (tabNum == 0) {
-            projectFlat.style.right = "calc(-40% - 250px)";
+        // About left 1
+        planeTower.style.right = "calc(115% - 250px)";
+        planeControl.style.right = "calc(150% - 250px)";
 
-            house.style.right = "calc(50% - 200px)";
-            langchange.style.left = "50px";
-            lamp.style.right = "calc(30% - 100px)";
-            sticky.style.right = "calc(50% + 27.5px)";
+        // Contact in view
 
-            currentTab = 0;
-            tab1.classList.add("currentTab");
-        }
-
-        // To projects page
-        else if (tabNum == 1) {
-            currentTab = 1;
-            tab2.classList.add("currentTab");
-            projectFlat.style.right = "calc(50% - 250px)";
-        }
-
-        // To about page
-        else if (tabNum == 2) {
-            currentTab = 2;
-            tab3.classList.add("currentTab");
-        }
+        // Set currentTab to tabNum
+        tab4.classList.add("currentTab");
     }
 }

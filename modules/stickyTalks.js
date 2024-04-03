@@ -9,16 +9,16 @@ export default function stickyTalks(currentTalky, currentLan) {
     if (currentTalky == 0) { // Sticky walks out
         stickyBox.classList.add("stickyHovers");
         sticky.style.display = "grid";
-        stickyBox.style.height = "300px";
-        stickyBox.style.transform = "translate(0, -230px)";
+        stickyBox.style.height = "260px";
+        stickyBox.style.transform = "translate(0, -210px)";
         
         if (currentLan == 0) {
-            stickyText.innerHTML = "Welcome!<br>My name is Joep van Dam. Well, actually I am a collection of styled HTML divs posing as the creator of this portfolio website, but you can call me Joep. I will be guiding you through this site. (Click to send me inside)";
+            stickyText.innerHTML = "Welcome!<br>My name is Joep van Dam. Well, actually I am a collection of styled HTML divs posing as the creator of this portfolio website, but you can call me Joep. (Click to send me inside)";
         }
         else if (currentLan == 1) {
-            stickyText.innerHTML = "Welkom!<br>Mijn naam is Joep van dam. Nouja, ik ben eigenlijk een verzameling van gestijlde HTML divs die zich voordoet als de maker van deze portfolio website, maar jij mag me Joep noemen. Ik zal je door deze site leiden. (Klik om me naar binnen te sturen)";
-            stickyBox.style.height = "350px";
-            stickyBox.style.transform = "translate(0, -255px)";
+            stickyText.innerHTML = "Welkom!<br>Mijn naam is Joep van dam. Nouja, ik ben eigenlijk een verzameling van gestijlde HTML divs die zich voordoet als de maker van deze portfolio website, maar jij mag me Joep noemen. (Klik om me naar binnen te sturen)";
+            stickyBox.style.height = "300px";
+            stickyBox.style.transform = "translate(0, -230px)";
         }
         stickyBox.setAttribute("onclick", `updateStickyTalks(1, ${currentLan})`);
 

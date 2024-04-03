@@ -1,0 +1,108 @@
+#planeTower {
+    position: absolute;
+    bottom: 45px;
+    right: calc(-50% - 250px);
+    z-index: 10;
+}
+
+#planeControl {
+    text-align: center;
+    position: absolute;
+    display: grid;
+    justify-content: center;
+    place-items: center;
+    grid-template-columns: 600px;
+    grid-template-rows: 100px 100px;
+    bottom: 48px;
+    right: calc(-50% - 250px);
+    background-color: rgb(200, 200, 200);
+    border: 1px solid black;
+    border-radius: 100px 100px 0 0;
+    z-index: 10;
+}
+
+#planeControlDisplay {
+    color: white;
+    font-size: 32px;
+    background-color: rgb(25, 50, 25);
+    width: 80%;
+    padding: 10px 0;
+    border-radius: 10px;
+}
+
+#planeControlButtons {
+    display: flex;
+    gap: 100px;
+}
+
+.planeControlButton {
+    width: 60px;
+    height: 60px;
+    background-color: rgb(125, 25, 25);
+    border: 1px solid black;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+.planeControlButton:hover { cursor: pointer; }
+.activePlaneControlButton { background-color: rgb(25, 125, 25); }
+.activePlaneControlButton:hover { background-color: rgb(25, 150, 25); }
+.activePlaneControlButton:active { background-color: rgb(25, 175, 25); }
+.inactivePlaneControlButton { background-color: rgb(125, 25, 25); }
+.inactivePlaneControlButton:hover { cursor: not-allowed; }
+
+.planeControlButtonDesc {
+    margin: 10px 0;
+    padding: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#basicInfo {
+    position: absolute;
+    top: 200px;
+    left: -820px;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    width: 820px;
+}
+
+#infoTitle {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+}
+#infoDesc {
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.planeTextWrapper {
+    background-color: rgb(225, 225, 225);
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 0 10px;
+    height: 225px;
+    width: auto;
+}
+
+.lineWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.line {
+    height: 5px;
+    width: 70px;
+    background-color: rgb(200, 200, 200);
+}
+
+.plane {
+    min-width: 100px;
+    min-height: 100px;
+    margin-left: -4px;
+}

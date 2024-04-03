@@ -1,9 +1,10 @@
 /* Other stylesheet imports */
-@import url('./baseStyle.css');
 @import url('./overlayStyle.css');
 @import url('./settingStyle.css');
+@import url('./aboutStyle.css');
 @import url('./stickStyle.css');
 @import url('./houseStyle.css');
+@import url('./baseStyle.css');
 @import url('./flagStyle.css');
 @import url('./flatStyle.css');
 @import url('./lampStyle.css');
