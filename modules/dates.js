@@ -15,4 +15,9 @@ export default function updateDates() {
     else if (years == 2) { studyYear.innerHTML = "second"; }
     else if (years == 3) { studyYear.innerHTML = "third"; }
     else if (years == 4) { studyYear.innerHTML = "fourth"; }
+
+    // Run darkmode if time is between 8pm and 8am
+    var darkmode = document.getElementById("darkmodeSwitch");
+    var hours = today.getHours();
+    if (hours >= 20 || hours < 8) { darkmode.click(); }
 }

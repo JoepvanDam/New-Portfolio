@@ -175,28 +175,145 @@
                     <button class="planeControlButton activePlaneControlButton" id="planeControlButton3" onclick="sendPlane(3)"></button>
                     <p class="planeControlButtonDesc">Skills</p>
                 </div>
+                <div class="planeControlButtonWrapper" style="display: none;">
+                    <button class="planeControlButton activePlaneControlButton" id="planeControlButton4" onclick="sendPlane(0)"></button>
+                    <p class="planeControlButtonDesc">Return</p>
+                </div>
             </div>
         </div>
-        <div id="infoWrapper">
+        <div id="sendPlaneWrapper">
             <div id="basicInfo">
                 <div class="planeTextWrapper">
-                    <h1 id="infoTitle">Info</h1>
                     <p id="infoDesc">My name is Joep van Dam. I'm a <span id="age1">...</span> year old student from the Netherlands, and I am currently in my <span id="studyYears">...</span> year at Open-ICT at the HU University of Applied Sciences Utrecht. I am currently mostly interested in AI, which I am learning a lot about. I like being creative, as you can probably tell from this site. I love all animals, but especially cats. I have one cat and one dog at home.</p>
                 </div>
                 <div class="lineWrapper">
-                    <div class="line" id="line1"></div>
-                    <div class="line" id="line1"></div>
+                    <div class="line" id="basicInfo_line1"></div>
+                    <div class="line" id="basicInfo_line2"></div>
                 </div>
                 <svg class="plane" id="plane1" width="101" height="81" viewBox="0 0 101 81" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
-                    <path id="planeMid1"
+                    <path class="planeMid"
                         d="M83.9573 30.8911H64.1152L45.8686 2.15043C45.6253 1.76779 45.2739 1.44979 44.8502 1.22864C44.4264 1.00749 43.9452 0.891032 43.4554 0.89106L32.0838 0.89106C30.2383 0.89106 28.9067 2.48012 29.4136 4.077L37.9258 30.8911H20.0681L12.5681 21.8911C12.0438 21.2614 11.2191 20.8911 10.3458 20.8911H3.40309C1.59579 20.8911 0.269395 22.4192 0.708633 23.9973L6.17914 40.8911L0.708633 57.7848C0.269395 59.3629 1.59579 60.8911 3.40309 60.8911H10.3458C11.2208 60.8911 12.0438 60.5207 12.5681 59.8911L20.0681 50.8911H37.9258L29.4136 77.7036C28.9067 79.3004 30.2383 80.8911 32.0838 80.8911H43.4554C44.4519 80.8911 45.372 80.4098 45.8668 79.6317L64.1152 50.8911H83.9573C90.0945 50.8911 100.624 46.4145 100.624 40.8911C100.624 35.3676 90.0945 30.8911 83.9573 30.8911Z"
                         fill="#FFFFFF" />
-                    <ellipse id="plane1WingLight1" cx="47.215" cy="64.8509" rx="3.40909" ry="2.72727"
+                    <ellipse class="planeWingLight" cx="47.215" cy="64.8509" rx="3.40909" ry="2.72727"
                         fill="#FFFFFF" />
-                    <ellipse id="plane1WingLight2" cx="47.215" cy="17.2744" rx="3.40909" ry="2.72727"
+                    <ellipse class="planeWingLight" cx="47.215" cy="17.2744" rx="3.40909" ry="2.72727"
                         fill="#FFFFFF" />
+                    <text class="planeText" x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="#000000">Info</text>
                 </svg>
+            </div>
+            <div id="interests">
+                <div class="planeTextWrapper">
+                    <ul class="interestsList">
+                        <li id="interest1">Programming: I have been programming as a small hobby for a few years, and am now starting to get into it as an occupation.</li>
+                        <li id="interest2">Front-End / Designing: I love being creative and making something beautiful and fun to look at!</li>
+                        <li id="interest3">Games: I play games daily and I would love to be in the development of one, especially game design. Games I play myself include Rocket League, Factorio, and Hunt: Showdown.</li>
+                    </ul>
+                </div>
+                <div class="lineWrapper">
+                    <div class="line" id="interests_line1"></div>
+                    <div class="line" id="interests_line2"></div>
+                </div>
+                <svg class="plane" id="plane2" width="101" height="81" viewBox="0 0 101 81" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path class="planeMid"
+                        d="M83.9573 30.8911H64.1152L45.8686 2.15043C45.6253 1.76779 45.2739 1.44979 44.8502 1.22864C44.4264 1.00749 43.9452 0.891032 43.4554 0.89106L32.0838 0.89106C30.2383 0.89106 28.9067 2.48012 29.4136 4.077L37.9258 30.8911H20.0681L12.5681 21.8911C12.0438 21.2614 11.2191 20.8911 10.3458 20.8911H3.40309C1.59579 20.8911 0.269395 22.4192 0.708633 23.9973L6.17914 40.8911L0.708633 57.7848C0.269395 59.3629 1.59579 60.8911 3.40309 60.8911H10.3458C11.2208 60.8911 12.0438 60.5207 12.5681 59.8911L20.0681 50.8911H37.9258L29.4136 77.7036C28.9067 79.3004 30.2383 80.8911 32.0838 80.8911H43.4554C44.4519 80.8911 45.372 80.4098 45.8668 79.6317L64.1152 50.8911H83.9573C90.0945 50.8911 100.624 46.4145 100.624 40.8911C100.624 35.3676 90.0945 30.8911 83.9573 30.8911Z"
+                        fill="#FFFFFF" />
+                    <ellipse class="planeWingLight" cx="47.215" cy="64.8509" rx="3.40909" ry="2.72727"
+                        fill="#FFFFFF" />
+                    <ellipse class="planeWingLight" cx="47.215" cy="17.2744" rx="3.40909" ry="2.72727"
+                        fill="#FFFFFF" />
+                    <text class="planeText" x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="#000000">Interests</text>
+                </svg>
+            </div>
+            <div id="skills">
+                <div class="skill">
+                    <div class="skill_part skill_part1"></div>
+                    <div class="skill_part skill_part2"></div>
+                    <div class="skill_part skill_part3"></div>
+                    <div class="skill_part skill_part4"></div>
+                    <div class="skill_part skill_part5"></div>
+                    <div class="skill_part skill_part6"></div>
+                    <div class="skill_part skill_part7"></div>
+                    <div class="skill_part skill_part8"></div>
+                    <svg class="smallerPlane" id="plane3" width="101" height="81" viewBox="0 0 101 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="planeMid"
+                            d="M83.9573 30.8911H64.1152L45.8686 2.15043C45.6253 1.76779 45.2739 1.44979 44.8502 1.22864C44.4264 1.00749 43.9452 0.891032 43.4554 0.89106L32.0838 0.89106C30.2383 0.89106 28.9067 2.48012 29.4136 4.077L37.9258 30.8911H20.0681L12.5681 21.8911C12.0438 21.2614 11.2191 20.8911 10.3458 20.8911H3.40309C1.59579 20.8911 0.269395 22.4192 0.708633 23.9973L6.17914 40.8911L0.708633 57.7848C0.269395 59.3629 1.59579 60.8911 3.40309 60.8911H10.3458C11.2208 60.8911 12.0438 60.5207 12.5681 59.8911L20.0681 50.8911H37.9258L29.4136 77.7036C28.9067 79.3004 30.2383 80.8911 32.0838 80.8911H43.4554C44.4519 80.8911 45.372 80.4098 45.8668 79.6317L64.1152 50.8911H83.9573C90.0945 50.8911 100.624 46.4145 100.624 40.8911C100.624 35.3676 90.0945 30.8911 83.9573 30.8911Z"
+                            fill="#FFFFFF" />
+                        <ellipse class="planeWingLight" cx="47.215" cy="64.8509" rx="3.40909" ry="2.72727"
+                            fill="#FFFFFF" />
+                        <ellipse class="planeWingLight" cx="47.215" cy="17.2744" rx="3.40909" ry="2.72727"
+                            fill="#FFFFFF" />
+                        <text class="planeText" x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="#000000">HTML / CSS</text>
+                    </svg>
+                </div>
+                <div class="skill">
+                    <div class="skill_part skill_part1"></div>
+                    <div class="skill_part skill_part2"></div>
+                    <div class="skill_part skill_part3"></div>
+                    <div class="skill_part skill_part4"></div>
+                    <div class="skill_part skill_part5"></div>
+                    <div class="skill_part skill_part6"></div>
+                    <div class="skill_part skill_part7"></div>
+                    <svg class="smallerPlane" id="plane4" width="101" height="81" viewBox="0 0 101 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="planeMid"
+                            d="M83.9573 30.8911H64.1152L45.8686 2.15043C45.6253 1.76779 45.2739 1.44979 44.8502 1.22864C44.4264 1.00749 43.9452 0.891032 43.4554 0.89106L32.0838 0.89106C30.2383 0.89106 28.9067 2.48012 29.4136 4.077L37.9258 30.8911H20.0681L12.5681 21.8911C12.0438 21.2614 11.2191 20.8911 10.3458 20.8911H3.40309C1.59579 20.8911 0.269395 22.4192 0.708633 23.9973L6.17914 40.8911L0.708633 57.7848C0.269395 59.3629 1.59579 60.8911 3.40309 60.8911H10.3458C11.2208 60.8911 12.0438 60.5207 12.5681 59.8911L20.0681 50.8911H37.9258L29.4136 77.7036C28.9067 79.3004 30.2383 80.8911 32.0838 80.8911H43.4554C44.4519 80.8911 45.372 80.4098 45.8668 79.6317L64.1152 50.8911H83.9573C90.0945 50.8911 100.624 46.4145 100.624 40.8911C100.624 35.3676 90.0945 30.8911 83.9573 30.8911Z"
+                            fill="#FFFFFF" />
+                        <ellipse class="planeWingLight" cx="47.215" cy="64.8509" rx="3.40909" ry="2.72727"
+                            fill="#FFFFFF" />
+                        <ellipse class="planeWingLight" cx="47.215" cy="17.2744" rx="3.40909" ry="2.72727"
+                            fill="#FFFFFF" />
+                        <text class="planeText" x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="#000000">JavaScript</text>
+                    </svg>
+                </div>
+                <div class="skill">
+                    <div class="skill_part skill_part1"></div>
+                    <div class="skill_part skill_part2"></div>
+                    <div class="skill_part skill_part3"></div>
+                    <div class="skill_part skill_part4"></div>
+                    <div class="skill_part skill_part5"></div>
+                    <div class="skill_part skill_part6"></div>
+                    <div class="skill_part skill_part7"></div>
+                    <svg class="smallerPlane" id="plane5" width="101" height="81" viewBox="0 0 101 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="planeMid"
+                            d="M83.9573 30.8911H64.1152L45.8686 2.15043C45.6253 1.76779 45.2739 1.44979 44.8502 1.22864C44.4264 1.00749 43.9452 0.891032 43.4554 0.89106L32.0838 0.89106C30.2383 0.89106 28.9067 2.48012 29.4136 4.077L37.9258 30.8911H20.0681L12.5681 21.8911C12.0438 21.2614 11.2191 20.8911 10.3458 20.8911H3.40309C1.59579 20.8911 0.269395 22.4192 0.708633 23.9973L6.17914 40.8911L0.708633 57.7848C0.269395 59.3629 1.59579 60.8911 3.40309 60.8911H10.3458C11.2208 60.8911 12.0438 60.5207 12.5681 59.8911L20.0681 50.8911H37.9258L29.4136 77.7036C28.9067 79.3004 30.2383 80.8911 32.0838 80.8911H43.4554C44.4519 80.8911 45.372 80.4098 45.8668 79.6317L64.1152 50.8911H83.9573C90.0945 50.8911 100.624 46.4145 100.624 40.8911C100.624 35.3676 90.0945 30.8911 83.9573 30.8911Z"
+                            fill="#FFFFFF" />
+                        <ellipse class="planeWingLight" cx="47.215" cy="64.8509" rx="3.40909" ry="2.72727"
+                            fill="#FFFFFF" />
+                        <ellipse class="planeWingLight" cx="47.215" cy="17.2744" rx="3.40909" ry="2.72727"
+                            fill="#FFFFFF" />
+                        <text class="planeText" x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="#000000">Python</text>
+                    </svg>
+                </div>
+                <div class="skill">
+                    <div class="skill_part skill_part1"></div>
+                    <div class="skill_part skill_part2"></div>
+                    <div class="skill_part skill_part3"></div>
+                    <svg class="smallerPlane" id="plane6" width="101" height="81" viewBox="0 0 101 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="planeMid"
+                            d="M83.9573 30.8911H64.1152L45.8686 2.15043C45.6253 1.76779 45.2739 1.44979 44.8502 1.22864C44.4264 1.00749 43.9452 0.891032 43.4554 0.89106L32.0838 0.89106C30.2383 0.89106 28.9067 2.48012 29.4136 4.077L37.9258 30.8911H20.0681L12.5681 21.8911C12.0438 21.2614 11.2191 20.8911 10.3458 20.8911H3.40309C1.59579 20.8911 0.269395 22.4192 0.708633 23.9973L6.17914 40.8911L0.708633 57.7848C0.269395 59.3629 1.59579 60.8911 3.40309 60.8911H10.3458C11.2208 60.8911 12.0438 60.5207 12.5681 59.8911L20.0681 50.8911H37.9258L29.4136 77.7036C28.9067 79.3004 30.2383 80.8911 32.0838 80.8911H43.4554C44.4519 80.8911 45.372 80.4098 45.8668 79.6317L64.1152 50.8911H83.9573C90.0945 50.8911 100.624 46.4145 100.624 40.8911C100.624 35.3676 90.0945 30.8911 83.9573 30.8911Z"
+                            fill="#FFFFFF" />
+                        <ellipse class="planeWingLight" cx="47.215" cy="64.8509" rx="3.40909" ry="2.72727"
+                            fill="#FFFFFF" />
+                        <ellipse class="planeWingLight" cx="47.215" cy="17.2744" rx="3.40909" ry="2.72727"
+                            fill="#FFFFFF" />
+                        <text class="planeText" x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="#000000">Unity</text>
+                    </svg>
+                </div>
+                <div class="skill">
+                    <div class="skill_part skill_part1"></div>
+                    <div class="skill_part skill_part2"></div>
+                    <svg class="smallerPlane" id="plane7" width="101" height="81" viewBox="0 0 101 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="planeMid"
+                            d="M83.9573 30.8911H64.1152L45.8686 2.15043C45.6253 1.76779 45.2739 1.44979 44.8502 1.22864C44.4264 1.00749 43.9452 0.891032 43.4554 0.89106L32.0838 0.89106C30.2383 0.89106 28.9067 2.48012 29.4136 4.077L37.9258 30.8911H20.0681L12.5681 21.8911C12.0438 21.2614 11.2191 20.8911 10.3458 20.8911H3.40309C1.59579 20.8911 0.269395 22.4192 0.708633 23.9973L6.17914 40.8911L0.708633 57.7848C0.269395 59.3629 1.59579 60.8911 3.40309 60.8911H10.3458C11.2208 60.8911 12.0438 60.5207 12.5681 59.8911L20.0681 50.8911H37.9258L29.4136 77.7036C28.9067 79.3004 30.2383 80.8911 32.0838 80.8911H43.4554C44.4519 80.8911 45.372 80.4098 45.8668 79.6317L64.1152 50.8911H83.9573C90.0945 50.8911 100.624 46.4145 100.624 40.8911C100.624 35.3676 90.0945 30.8911 83.9573 30.8911Z"
+                            fill="#FFFFFF" />
+                        <ellipse class="planeWingLight" cx="47.215" cy="64.8509" rx="3.40909" ry="2.72727"
+                            fill="#FFFFFF" />
+                        <ellipse class="planeWingLight" cx="47.215" cy="17.2744" rx="3.40909" ry="2.72727"
+                            fill="#FFFFFF" />
+                        <text class="planeText" x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="#000000">C#</text>
+                    </svg>
+                </div>
             </div>
         </div>
 

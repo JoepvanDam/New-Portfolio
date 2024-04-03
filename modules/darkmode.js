@@ -22,6 +22,8 @@ export default function darkModeSwitch(onOff) {
             stickyDark(true); // Make sticky dark
             settingsDark(true); // Make settings dark
             projectsDark(true); // Make projects dark
+            aboutPlanes(true); // Make about planes dark
+            aboutMisc(true); // Make about misc dark
             background('lightBG', 'redBG', 'darkBG'); // Change background to dark
         }, 500);
 
@@ -54,6 +56,8 @@ export default function darkModeSwitch(onOff) {
             stickyDark(false); // Make sticky light
             settingsDark(false); // Make settings light
             projectsDark(false); // Make projects light
+            aboutPlanes(false); // Make about planes light
+            aboutMisc(false); // Make about misc light
             background('darkBG', 'redBG', 'lightBG'); // Change background to light
         }, 500);
 
@@ -366,5 +370,83 @@ function projectsDark(isOn) {
         // Windows
         const windows = document.getElementsByClassName("projectWindow");
         for (let i = 0; i < windows.length; i++) { windows[i].style.backgroundColor = "rgb(100, 100, 150)"; }
+    }
+}
+
+// About planes
+function aboutPlanes(isOn) {
+    if (isOn) { // Dark mode on
+        // Planes
+        const planeMids = document.getElementsByClassName("planeMid");
+        for (let i = 0; i < planeMids.length; i++) { planeMids[i].setAttribute("fill", "rgb(20, 20, 40)"); }
+        const planeTexts = document.getElementsByClassName("planeText");
+        for (let i = 0; i < planeTexts.length; i++) { planeTexts[i].setAttribute("fill", "rgb(255, 255, 255)"); }
+
+        // Plane lights
+        setTimeout(() => {
+            const random = ['random1', 'random2', 'random3', 'random4']
+            const planeWingLights = document.getElementsByClassName("planeWingLight");
+            for (let i = 0; i < planeWingLights.length; i++) {
+                const randomIndex = Math.floor(Math.random() * random.length);
+                planeWingLights[i].classList.add(random[randomIndex]);
+            }
+        }, 500);
+
+        // Lines
+        const lines = document.getElementsByClassName("line");
+        for (let i = 0; i < lines.length; i++) { lines[i].backgroundColor = "rgba(40, 40, 60, 0.5)"; }
+        
+        // Skills
+        document.getElementById("skills").classList.add("dark");
+        document.getElementById("skills").classList.remove("light");
+    } else { // Dark mode off
+        // Planes
+        const planeMids = document.getElementsByClassName("planeMid");
+        for (let i = 0; i < planeMids.length; i++) { planeMids[i].setAttribute("fill", "#FFFFFF"); }
+        const planeTexts = document.getElementsByClassName("planeText");
+        for (let i = 0; i < planeTexts.length; i++) { planeTexts[i].setAttribute("fill", "#000000"); }
+
+        // Plane lights
+        const planeWingLights = document.getElementsByClassName("planeWingLight");
+        for (let i = 0; i < planeWingLights.length; i++) { planeWingLights[i].classList.remove('random1', 'random2', 'random3', 'random4'); }
+
+        // Skills
+        document.getElementById("skills").classList.remove("dark");
+        document.getElementById("skills").classList.add("light");
+    }
+}
+
+// Plane control & tower
+function aboutMisc(isOn) {
+    if (isOn) { // Dark mode on
+        // Plane control panel
+        document.getElementById("planeControl").style.backgroundColor = "rgb(50, 50, 50)";
+        document.getElementById("planeControl").style.border = "1px solid rgb(100, 100, 100)";
+        document.getElementById("planeControl").style.color = "white";
+
+        // Display
+        document.getElementById("planeControlDisplay").style.backgroundColor = "rgb(50, 100, 50)";
+
+        // Buttons
+        const buttons = document.getElementsByClassName("planeControlButton");
+        for (let i = 0; i < buttons.length; i++) { buttons[i].style.border = "1px solid rgb(155, 155, 155)"; }
+
+        // Tower
+        document.getElementById("planeTower").style.opacity = 0.5;
+    } else { // Dark mode off
+        // Plane control panel
+        document.getElementById("planeControl").style.backgroundColor = "rgb(200, 200, 200)";
+        document.getElementById("planeControl").style.border = "1px solid black";
+        document.getElementById("planeControl").style.color = "black";
+
+        // Display
+        document.getElementById("planeControlDisplay").style.backgroundColor = "rgb(25, 50, 25)";
+
+        // Buttons
+        const buttons = document.getElementsByClassName("planeControlButton");
+        for (let i = 0; i < buttons.length; i++) { buttons[i].style.border = "1px solid black"; }
+
+        // Tower
+        document.getElementById("planeTower").style.opacity = 1;
     }
 }
