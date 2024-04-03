@@ -32,8 +32,8 @@ function checkPortrait() {
 }
 
 // On start
-darkModeSwitch(true);
+//darkModeSwitch(true);
 updateStickyTalks(0);
-switchTabs(1);
+//switchTabs(1);
 checkPortrait();
 switchProjects(0);
