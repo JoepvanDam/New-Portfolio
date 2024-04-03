@@ -1,0 +1,56 @@
+/* Overlay */
+#overlay {
+    position: fixed;
+    pointer-events: none;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+#sun {
+    top: 25px;
+    left: calc(50% - 55px);
+    animation: sunRotate 4s linear 500ms infinite;
+    pointer-events: all;
+}
+
+@keyframes sunRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#moon {
+    top: 100%;
+    left: 0;
+    pointer-events: all;
+}
+
+#sun, #moon {
+    position: absolute;
+    user-select: none;
+    transition: all 1s, transform 300ms, filter 300ms;
+}
+
+#sun:hover, #moon:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    filter: brightness(0.8);
+}
+
+/* Moon cool fact on hover */
+#moonHoverText {
+    position: absolute;
+    padding: 3px 10px;
+    max-width: 280px;
+    display: none;
+    font-size: 16px;
+    left: calc(50% + 80px);
+    top: 15px;
+    color: white;
+    background-color: rgba(70, 70, 70, 0.5);
+    border-radius: 10px;
+    border-bottom-left-radius: 0;
+}
+#moonWrapper:hover #moonHoverText { display: block; }

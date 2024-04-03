@@ -1,0 +1,229 @@
+#projectFlat {
+    position: absolute;
+    bottom: 45px;
+    right: calc(-40% - 250px);
+    z-index: 10;
+}
+
+#projectFlatTop {
+    position: absolute;
+    top: -20px;
+    left: calc(50% - 200px);
+    width: 400px;
+    height: 20px;
+    background-color: rgb(140, 140, 140);
+    border-radius: 5px 5px 0 0;
+    z-index: -1;
+}
+
+#flatBlock {
+    width: 500px;
+    height: 500px;
+    background-color: rgb(150, 150, 150);
+    z-index: 9;
+}
+
+#projectChoice {
+    display: grid;
+    justify-content: center;
+    place-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 20px 1fr 1fr;
+    width: 500px;
+    height: 500px;
+}
+
+.project {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
+}
+
+.projectFlatText {
+    text-align: center;
+    color: white;
+    transition: opacity 500ms;
+}
+
+#projectLeft {
+    place-self: start;
+    transform: scaleX(-1);
+    margin-left: 20px;
+}
+
+#projectRight {
+    place-self: end;
+    margin-right: 20px;
+}
+
+.projectArrow {
+    color: rgb(25, 25, 25);
+    font-size: 24px;
+    border: 2px solid rgb(25, 25, 25);
+    border-radius: 5px;
+    line-height: 24px;
+    filter: blur(0.25px);
+    user-select: none;
+    transition: all 1s, transform 300ms;
+}
+
+.disabledProjectArrow { opacity: 0; }
+
+#projectLeft:not(.disabledProjectArrow):hover {
+    cursor: pointer;
+    transform: scaleX(-1) scale(1.1);
+}
+#projectRight:not(.disabledProjectArrow):hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.projectWindow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 2px;
+    background-color: rgb(100, 100, 200);
+    transition: transform 300ms;
+}
+
+.projectWindow:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+#projectDoorWrapper {
+    position: absolute;
+    left: calc(50% - 55px);
+    bottom: 110px;
+    grid-column: span 2;
+}
+
+#projectDoorBehind {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    background-color: rgb(100, 100, 200);
+}
+
+#projectDoorPart1 {
+    position: absolute;
+    width: 56px;
+    height: 110px;
+    background-color: rgba(100, 100, 100, 0.8);
+}
+
+#projectDoorPart2 {
+    position: absolute;
+    right: -110px;
+    width: 56px;
+    height: 110px;
+    background-color: rgba(100, 100, 100, 0.8);
+}
+
+#projectInfo {
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    color: black;
+    display: none;
+    flex-direction: column;
+    justify-content: start;
+    place-items: center;
+}
+
+#projectInfoTitle, #projectInfoDesc {
+    margin-top: 20px;
+    background-color: rgb(200, 200, 200);
+    height: auto;
+    width: 90%;
+    border-radius: 10px;
+    border: 4px solid rgb(115, 115, 255);
+    padding: 0 10px;
+}
+
+#projectInfoTitle { text-align: center; }
+#projectInfoDesc {
+    font-size: 14px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 2px solid rgb(115, 115, 255);
+    height: 275px;
+    overflow: auto;
+    line-height: 24px;
+}
+#projectInfoDesc a { color: inherit; }
+
+#projectInfoDesc .tags {
+    margin: 10px 0 0 0;
+    padding: 0;
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+}
+
+#projectInfoDesc .tag {
+    text-align: center;
+    color: white;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 0 10px;
+    font-size: 14px;
+    min-width: 20px;
+}
+
+#projectInfoDesc .html { background-color: rgb(0, 55, 125); }
+#projectInfoDesc .css { background-color: rgb(125, 0, 0); }
+#projectInfoDesc .js { background-color: rgb(0, 125, 0); }
+#projectInfoDesc .react { background-color: rgb(125, 125, 0); }
+#projectInfoDesc .python { background-color: rgb(0, 125, 125); }
+#projectInfoDesc .csharp { background-color: rgb(125, 0, 125); }
+#projectInfoDesc .unity { background-color: rgb(255, 255, 255); color: black; }
+#projectInfoDesc .php { background-color: rgb(25, 25, 25); }
+
+#projectInfoDesc .links {
+    margin: 10px 0 0 0;
+    padding: 0;
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+}
+
+#projectInfoDesc .link {
+    text-align: center;
+    font-size: 14px;
+    width: fit-content;
+    background-color: rgb(55, 55, 155);
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    padding: 0 10px;
+    font-size: 12px;
+    transition: background-color 200ms;
+    min-width: 20px;
+}
+
+#projectInfoDesc .link:hover {
+    cursor: pointer;
+    background-color: rgb(55, 55, 255);
+}
+
+#projectInfoClose {
+    color: red;
+    font-size: 62px;
+    transition: all 100ms;
+    position: absolute;
+    bottom: 10px;
+    right: calc(50% - 25px);
+}
+
+#projectInfoClose:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}

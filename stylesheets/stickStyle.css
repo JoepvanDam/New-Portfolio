@@ -1,0 +1,83 @@
+/* Stick figure */
+#sticky {
+    opacity: 0;
+    position: absolute;
+    display: grid;
+    justify-content: center;
+    place-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    bottom: 30px;
+    right: calc(50% + 27.5px);
+    z-index: 11;
+    transform: scale(0.8);
+}
+
+#stickyTalks1 {
+    opacity: 0;
+    position: absolute;
+    display: grid;
+    justify-content: center;
+    place-items: center;
+    width: 260px;
+    height: 280px;
+    border-radius: 15px;
+    grid-column: span 4;
+    background-color: rgb(200, 200, 200);
+    border: 1px solid rgb(0, 0, 0);
+    transform: translate(0, -220px);
+    z-index: 10;
+}
+
+.stickyHovers:hover { cursor: pointer; text-decoration: underline white; }
+
+#stickyTalks2 {
+    opacity: 0;
+    width: 20px;
+    height: 20px;
+    grid-column: span 4;
+    background-color: rgb(200, 200, 200);
+    border: 1px solid rgb(0, 0, 0);
+    transform: rotate(45deg);
+}
+
+#stickyTalksText {
+    text-align: left;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    margin: 0;
+}
+
+#stickyHead {
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    grid-column: span 4;
+    background-color: rgb(200, 200, 200);
+    border: 1px solid rgb(75, 75, 75);
+    transform: translate(0, 9px);
+}
+
+#stickyBody {
+    width: 50px;
+    height: 60px;
+    border-radius: 10px;
+    grid-column: span 2;
+    background-color: rgb(200, 200, 200);
+    border: 1px solid rgb(75, 75, 75);
+    transform: translate(0, 8px);
+    z-index: 10;
+}
+
+#stickyLeg1, #stickyLeg2, #stickyArm1, #stickyArm2 {
+    height: 50px;
+    width: 10px;
+    border-radius: 5px;
+    background-color: rgb(200, 200, 200);
+    border: 1px solid rgb(75, 75, 75);
+}
+
+#stickyArm1 { transform: rotate(30deg) translate(8px, -2px); }
+#stickyArm2 { transform: rotate(-30deg) translate(-8px, -2px); }
+#stickyLeg1 { transform: rotate(5deg); grid-column: 2; }
+#stickyLeg2 { transform: rotate(-5deg); }

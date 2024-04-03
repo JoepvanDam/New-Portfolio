@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joep van Dam | Portfolio</title>
+
+    <!-- CSS include -->
+    <link rel="stylesheet" href="./stylesheets/mainStyle.css">
+</head>
+
+<body>
+
+    <!-- Overlay for things that need to stay in position when main moves - e.g. sun/moon and settings -->
+    <div id="overlay">
+        <!-- Sun -->
+        <svg id="sun" width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg"
+            onclick="darkModeSwitch(true)">
+            <circle cx="55" cy="55" r="25" fill="white" />
+            <rect x="52" width="6" height="25" rx="3" fill="white" />
+            <rect x="52" y="85" width="6" height="25" rx="3" fill="white" />
+            <rect x="85" y="58" width="6" height="25" rx="3" transform="rotate(-90 85 58)" fill="white" />
+            <rect y="58" width="6" height="25" rx="3" transform="rotate(-90 0 58)" fill="white" />
+            <rect x="12" y="16.2426" width="6" height="25" rx="3" transform="rotate(-45 12 16.2426)" fill="white" />
+            <rect x="76" y="80.2426" width="6" height="25" rx="3" transform="rotate(-45 76 80.2426)" fill="white" />
+            <rect x="93.6777" y="12" width="6" height="25" rx="3" transform="rotate(45 93.6777 12)" fill="white" />
+            <rect x="29.6777" y="76" width="6" height="25" rx="3" transform="rotate(45 29.6777 76)" fill="white" />
+        </svg>
+
+        <!-- Moon -->
+        <div id="moonWrapper">
+            <img draggable="false" id="moon" src="./images/moonPhases/New.svg" onclick="darkModeSwitch(false)">
+            <span id="moonHoverText">This moon (mostly) accurately reflects the current lunar phase. Pretty cool, right?!</span>
+        </div>
+
+        <!-- Settings -->
+        <div id="settingsWrapper" class="settingsUp">
+            <div id="settingsBox">
+                <p id="settingDarkmode">Darkmode</p>
+                <label class="switch" id="darkmodeSwitch" onclick="darkModeSwitch(true)">
+                    <input id="darkmodeCheckbox" type="checkbox" onclick="">
+                    <span class="slider round"></span>
+                </label>
+
+                <p id="settingAnim">Animations</p>
+                <label class="switch" id="animationSwitch" onclick="animationSwitch(false)">
+                    <input id="animationCheckbox" type="checkbox" onclick="" checked>
+                    <span class="slider round"></span>
+                </label>
+
+                <img onclick="updateLanguage(0)" src="./images/UKFlag.webp" class="settingFlag settingCurrentFlag" id="settingUKFlag">
+                <img onclick="updateLanguage(1)" src="./images/NLFlag.png" class="settingFlag" id="settingNLFlag">
+            </div>
+            <svg id="settingsWheel" onclick="openSettings(true)" width="101" height="133" viewBox="0 0 101 133" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect id="Line" x="25.22" y="0" width="10" height="60" fill="gray" stroke="black" stroke-width="2" />
+                <rect id="Line_2" x="65.22" y="0" width="10" height="60" fill="gray" stroke="black" stroke-width="2" />
+                <mask id="path-3-inside-1_21_26" fill="white">
+                    <path 
+                        d="M94.7401 72.4724H89.439C88.4536 68.6309 86.9157 65.0331 84.9102 61.742L88.7212 57.9222C89.7501 56.8934 90.3156 55.5208 90.3156 54.0634C90.3156 52.6081 89.7457 51.2334 88.7212 50.2067L82.3695 43.8615C80.3095 41.7993 76.7095 41.8015 74.6583 43.8593L70.6863 47.8074C67.4321 45.9106 63.943 44.4488 60.0994 43.5091V37.8361C60.0994 34.8277 57.6958 32.3545 54.6874 32.3545H45.708C42.6997 32.3545 40.333 34.8277 40.333 37.8361V43.5069C36.4916 44.4445 32.9807 45.9084 29.7222 47.8074L25.7524 43.8593C23.6946 41.7972 20.0924 41.7993 18.0281 43.8572L11.6808 50.2023C10.6628 51.2182 10.082 52.6234 10.082 54.059C10.082 55.5142 10.6454 56.8846 11.6764 57.9135L15.4875 61.742C13.4841 65.0331 11.944 68.6309 10.9608 72.4724H5.65756C2.64703 72.4724 0.217285 74.8913 0.217285 77.8931V86.8659C0.217285 89.8765 2.64703 92.241 5.65756 92.241H10.9608C11.944 96.0824 13.4819 99.702 15.4831 102.993L11.6721 106.828C10.641 107.857 10.0755 109.234 10.0755 110.691C10.0755 112.149 10.6432 113.526 11.6721 114.554L18.0238 120.904C19.0549 121.933 20.4231 122.498 21.8783 122.498C23.3335 122.498 24.7039 121.931 25.735 120.904L29.7222 116.954C32.9807 118.853 36.4916 120.315 40.333 121.256V126.921C40.333 129.929 42.6997 132.354 45.708 132.354H54.6874C57.6958 132.354 60.0994 129.929 60.0994 126.921V121.254C63.943 120.315 67.4321 118.853 70.6906 116.954L74.643 120.895C75.6741 121.929 77.0445 122.494 78.5041 122.494C79.9615 122.494 81.3341 121.926 82.363 120.9L88.7146 114.554C89.7435 113.528 90.3069 112.155 90.3113 110.7C90.3113 109.243 89.7414 107.874 88.7146 106.843L84.908 102.993C86.9092 99.6998 88.4471 96.0781 89.4325 92.241H94.7357C97.7441 92.241 100.217 89.8765 100.217 86.8659V77.8931C100.219 74.8913 97.7484 72.4724 94.7401 72.4724ZM50.1955 99.4606C40.6724 99.4606 32.9503 91.8103 32.9503 82.3806C32.9503 72.9444 40.6724 65.305 50.1955 65.305C59.7209 65.305 67.4474 72.9444 67.4474 82.3806C67.4452 91.8124 59.7209 99.4606 50.1955 99.4606Z" />
+                </mask>
+                <path
+                    d="M94.7401 72.4724H89.439C88.4536 68.6309 86.9157 65.0331 84.9102 61.742L88.7212 57.9222C89.7501 56.8934 90.3156 55.5208 90.3156 54.0634C90.3156 52.6081 89.7457 51.2334 88.7212 50.2067L82.3695 43.8615C80.3095 41.7993 76.7095 41.8015 74.6583 43.8593L70.6863 47.8074C67.4321 45.9106 63.943 44.4488 60.0994 43.5091V37.8361C60.0994 34.8277 57.6958 32.3545 54.6874 32.3545H45.708C42.6997 32.3545 40.333 34.8277 40.333 37.8361V43.5069C36.4916 44.4445 32.9807 45.9084 29.7222 47.8074L25.7524 43.8593C23.6946 41.7972 20.0924 41.7993 18.0281 43.8572L11.6808 50.2023C10.6628 51.2182 10.082 52.6234 10.082 54.059C10.082 55.5142 10.6454 56.8846 11.6764 57.9135L15.4875 61.742C13.4841 65.0331 11.944 68.6309 10.9608 72.4724H5.65756C2.64703 72.4724 0.217285 74.8913 0.217285 77.8931V86.8659C0.217285 89.8765 2.64703 92.241 5.65756 92.241H10.9608C11.944 96.0824 13.4819 99.702 15.4831 102.993L11.6721 106.828C10.641 107.857 10.0755 109.234 10.0755 110.691C10.0755 112.149 10.6432 113.526 11.6721 114.554L18.0238 120.904C19.0549 121.933 20.4231 122.498 21.8783 122.498C23.3335 122.498 24.7039 121.931 25.735 120.904L29.7222 116.954C32.9807 118.853 36.4916 120.315 40.333 121.256V126.921C40.333 129.929 42.6997 132.354 45.708 132.354H54.6874C57.6958 132.354 60.0994 129.929 60.0994 126.921V121.254C63.943 120.315 67.4321 118.853 70.6906 116.954L74.643 120.895C75.6741 121.929 77.0445 122.494 78.5041 122.494C79.9615 122.494 81.3341 121.926 82.363 120.9L88.7146 114.554C89.7435 113.528 90.3069 112.155 90.3113 110.7C90.3113 109.243 89.7414 107.874 88.7146 106.843L84.908 102.993C86.9092 99.6998 88.4471 96.0781 89.4325 92.241H94.7357C97.7441 92.241 100.217 89.8765 100.217 86.8659V77.8931C100.219 74.8913 97.7484 72.4724 94.7401 72.4724ZM50.1955 99.4606C40.6724 99.4606 32.9503 91.8103 32.9503 82.3806C32.9503 72.9444 40.6724 65.305 50.1955 65.305C59.7209 65.305 67.4474 72.9444 67.4474 82.3806C67.4452 91.8124 59.7209 99.4606 50.1955 99.4606Z"
+                    fill="#969696" stroke="black" stroke-width="4" mask="url(#path-3-inside-1_21_26)" />
+            </svg>
+        </div>
+    </div>
+
+    <!-- Main content section -->
+    <div id="main" class="lightBG">
+
+        <!-- Flagpole -->
+        <div id="langChange">
+            <div id="pole">
+                <div id="poleTop"></div>
+                <div id="poleBottom"></div>
+            </div>
+            <img onclick="updateLanguage(1)" id="UKFlag" src="./images/UKFlag.webp">
+            <img onclick="updateLanguage(0)" id="NLFlag" src="./images/NLFlag.png">
+        </div>
+
+        <!-- Sticky the stick figure -->
+        <div id="sticky">
+            <div onclick="" id="stickyTalks1" class="stickyHovers">
+                <p id="stickyTalksText"></p>
+            </div>
+            <div id="stickyTalks2"></div>
+            <div id="stickyHead"></div>
+            <div id="stickyArm1"></div>
+            <div id="stickyBody"></div>
+            <div id="stickyArm2"></div>
+            <div id="stickyLeg1"></div>
+            <div id="stickyLeg2"></div>
+        </div>
+
+        <!-- Sticky's house -->
+        <div id="house">
+            <div id="mainHouse">
+                <p id="houseText">Home Sweet Home</p>
+                <div id="behindDoor"></div>
+                <div id="door">
+                    <div id="doorKnob"></div>
+                </div>
+                <div id="window"></div>
+            </div>
+            <div id="smoke4"></div>
+            <div id="smoke3"></div>
+            <div id="smoke2"></div>
+            <div id="smoke1"></div>
+            <div id="chimney"></div>
+            <div id="roof"></div>
+        </div>
+
+        <!-- Street Lamp next to house -->
+        <div id="lamp">
+            <div id="lampPoleTop"></div>
+            <svg id="lampLight" width="403" height="642" viewBox="0 0 403 642" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M197.972 1.5L229.208 0.5L402.864 641.75H0.162354L169.559 0.5L197.972 1.5Z"
+                    fill="url(#lampPaint)" fill-opacity="0.25" />
+                <defs>
+                    <linearGradient id="lampPaint" x1="201.513" y1="0.5" x2="201.513" y2="0.5"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#E4C590" />
+                        <stop offset="1" stop-color="#E4C590" stop-opacity="0" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <div id="lampBulb"></div>
+            <div id="lampPole"></div>
+        </div>
+
+        <!-- Project Flat -->
+        <div id="projectFlat">
+            <div id="projectFlatTop"></div>
+            <div id="flatBlock">
+                <div id="projectChoice">
+                    <div class="project" id="project1"><div class="projectWindow" id="projectWindow1"><p></p></div></div>
+                    <div class="project" id="project2"><div class="projectWindow" id="projectWindow2"><p></p></div></div>
+
+                    <div class="projectArrow disabledProjectArrow" id="projectLeft">&#10140;</div>
+                    <div class="projectArrow disabledProjectArrow" id="projectRight">&#10140;</div>
+
+                    <div class="project" id="project3"><div class="projectWindow" id="projectWindow3"><p></p></div></div>
+                    <div class="project" id="project4"><div class="projectWindow" id="projectWindow4"><p></p></div></div>
+
+                    <div id="projectDoorWrapper">
+                        <div id="projectDoorBehind"></div>
+                        <div id="projectDoorPart1"></div>
+                        <div id="projectDoorPart2"></div>
+                    </div>
+                </div>
+                <div id="projectInfo" style="display: none;">
+                    <div id="projectCurrent" style="display: none;"></div>
+                    <div id="projectInfoTitle"></div>
+                    <div id="projectInfoDesc"></div>
+                    <div id="projectInfoClose">&#10006;</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabs (nav) -->
+        <div id="tabs">
+            <div onclick="switchTabs(0)" class="tab currentTab" id="tab1"><p>Home</p></div>
+            <div onclick="switchTabs(1)" class="tab" id="tab2"><p>Projects</p></div>
+            <div onclick="switchTabs(2)" class="tab" id="tab3"><p>About</p></div>
+            <div onclick="switchTabs(3)" class="tab" id="tab4"><p>Contact</p></div>
+        </div>
+
+        <!-- The ground -->
+        <div id="floor"></div>
+    </div>
+
+    <!-- JS includes -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/suncalc/1.8.0/suncalc.min.js"></script>
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>

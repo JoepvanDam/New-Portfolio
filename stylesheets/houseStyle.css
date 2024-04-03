@@ -1,0 +1,132 @@
+/* House */
+#house {
+    position: absolute;
+    right: calc(50% - 200px);
+    bottom: 10px;
+    z-index: 10;
+    transform: scale(0.8);
+}
+
+#houseText {
+    position: absolute;
+    top: 75px;
+    font-size: 24px;
+    text-align: center;
+    font-family: 'Brush Script MT', cursive;
+    color: rgb(50, 50, 50);
+    width: 100%;
+}
+
+#mainHouse {
+    height: 400px;
+    width: 400px;
+    background-color: rgb(125, 125, 125);
+}
+
+#door {
+    position: absolute;
+    bottom: 0;
+    right: 250px;
+    height: 200px;
+    width: 100px;
+    background-color: rgb(150, 150, 150);
+    transition: all 1s, left 0s;
+}
+
+#behindDoor {
+    position: absolute;
+    bottom: 0;
+    right: 250px;
+    height: 200px;
+    width: 100px;
+    background-color: rgb(75, 75, 75);
+}
+
+#doorKnob {
+    position: absolute;
+    bottom: 100px;
+    left: 10px;
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    background-color: rgb(125, 125, 125);
+    transition: all 1s, opacity 300ms;
+}
+
+#window {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    height: 150px;
+    width: 150px;
+    border-radius: 5px;
+    background-color: rgb(100, 100, 150);
+}
+
+#roof {
+    position: absolute;
+    bottom: 200px;
+    right: 25px;
+    height: 350px;
+    width: 350px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, rgb(100, 100, 100) 0%, rgb(100, 100, 100) 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%);
+    transform: rotate(45deg);
+}
+
+#chimney {
+    position: absolute;
+    height: 100px;
+    width: 50px;
+    background-color: rgb(125, 125, 125);
+    bottom: 450px;
+    right: 50px;
+}
+
+#smoke1 {
+    opacity: 0;
+    position: absolute;
+    bottom: 525px;
+    right: 46px;
+    height: 90px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: rgb(200, 200, 200);
+    transform: rotate(10deg);
+}
+
+#smoke2 {
+    opacity: 0;
+    position: absolute;
+    bottom: 580px;
+    right: 15px;
+    height: 90px;
+    width: 70px;
+    border-radius: 50%;
+    background-color: rgb(200, 200, 200);
+    transform: rotate(20deg);
+}
+
+#smoke3 {
+    opacity: 0;
+    position: absolute;
+    bottom: 620px;
+    right: -40px;
+    height: 100px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: rgb(200, 200, 200);
+    transform: rotate(50deg);
+}
+
+#smoke4 {
+    opacity: 0;
+    position: absolute;
+    bottom: 630px;
+    right: -110px;
+    height: 110px;
+    width: 90px;
+    border-radius: 50%;
+    background-color: rgb(200, 200, 200);
+    transform: rotate(80deg);
+}

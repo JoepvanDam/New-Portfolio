@@ -1,0 +1,42 @@
+/* Other stylesheet imports */
+@import url('./baseStyle.css');
+@import url('./overlayStyle.css');
+@import url('./settingStyle.css');
+@import url('./stickStyle.css');
+@import url('./houseStyle.css');
+@import url('./flagStyle.css');
+@import url('./flatStyle.css');
+@import url('./lampStyle.css');
+@import url('./tabStyle.css');
+
+/* Main */
+#main {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    place-items: center;
+    grid-template-columns: repeat(5, 1fr);
+    flex-grow: 1;
+}
+
+.highlightThis {
+    border: 1px solid rgb(255, 255, 255);
+    transition: all 1s, border 0s;
+}
+
+/* Floor */
+#floor {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: rgb(0, 150, 0);
+    z-index: 11;
+}
+
+/* Background color classes */
+.lightBG { background-color: rgb(155, 189, 209); }
+.redBG { background-color: rgb(184, 101, 92); }
+.darkBG { background-color: rgb(22, 20, 49); }

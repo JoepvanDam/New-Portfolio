@@ -1,0 +1,41 @@
+#lamp {
+    position: absolute;
+    right: calc(30% - 100px);
+    bottom: 45px;
+}
+
+#lampPole {
+    height: 400px;
+    width: 10px;
+    background-color: rgb(150, 150, 150);
+    z-index: 6;
+}
+
+#lampPoleTop {
+    position: absolute;
+    top: -5px;
+    right: -35px;
+    height: 30px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: rgb(120, 120, 120);
+    z-index: 8;
+}
+
+#lampBulb {
+    position: absolute;
+    top: 10px;
+    right: -25px;
+    height: 20px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: rgb(130, 130, 135);
+    z-index: 9;
+}
+
+#lampLight {
+    position: absolute;
+    top: 20px;
+    right: -199px;
+    z-index: 7;
+}
