@@ -1,3 +1,5 @@
+import darkModeSwitch from "./darkmode.js";
+
 export default function updateDates() {
     // Update age
     var age1 = document.getElementById("age1");
@@ -17,7 +19,6 @@ export default function updateDates() {
     else if (years == 4) { studyYear.innerHTML = "fourth"; }
 
     // Run darkmode if time is between 8pm and 8am
-    var darkmode = document.getElementById("darkmodeSwitch");
     var hours = today.getHours();
-    if (hours >= 20 || hours < 8) { darkmode.click(); }
+    if (hours >= 20 || hours < 8) { darkModeSwitch(true); }
 }

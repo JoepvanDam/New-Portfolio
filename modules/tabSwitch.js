@@ -1,3 +1,5 @@
+import sendPlane from "./planes.js";
+
 var currentTab = 0, moving = false;
 export default function switchTabs(tabNum) {
     if (currentTab == tabNum || moving) { return }
@@ -56,6 +58,7 @@ export default function switchTabs(tabNum) {
         // About right 2
         planeTower.style.right = "calc(-150% + 250px)";
         planeControl.style.right = "calc(-150% + 250px)";
+        sendPlane(4); sendPlane(5); sendPlane(6);
 
         // Contact right 3
 
@@ -75,6 +78,7 @@ export default function switchTabs(tabNum) {
         // About right 1
         planeTower.style.right = "calc(-50% + 250px)";
         planeControl.style.right = "calc(-50% + 250px)";
+        sendPlane(4); sendPlane(5); sendPlane(6);
 
         // Contact right 2
 
@@ -94,6 +98,8 @@ export default function switchTabs(tabNum) {
         // About in view
         planeTower.style.right = "calc(15% - 250px)";
         planeControl.style.right = "calc(50% - 250px)";
+        sendPlaneWrapper.style.right = "";
+        sendPlane(4); sendPlane(5); sendPlane(6);
 
         // Contact right 1
 
@@ -113,6 +119,8 @@ export default function switchTabs(tabNum) {
         // About left 1
         planeTower.style.right = "calc(115% - 250px)";
         planeControl.style.right = "calc(150% - 250px)";
+        sendPlaneWrapper.style.right = "calc(150% - 250px)";
+        sendPlane(4); sendPlane(5); sendPlane(6);
 
         // Contact in view
 

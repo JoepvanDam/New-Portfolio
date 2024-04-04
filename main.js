@@ -35,7 +35,7 @@ function checkPortrait() {
 }
 
 // On start
-//darkModeSwitch(true);
+// darkModeSwitch(true);
 updateStickyTalks(0);
 switchTabs(2);
 checkPortrait();
