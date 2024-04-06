@@ -394,7 +394,16 @@ function aboutPlanes(isOn) {
 
         // Lines
         const lines = document.getElementsByClassName("line");
-        for (let i = 0; i < lines.length; i++) { lines[i].backgroundColor = "rgba(40, 40, 60, 0.5)"; }
+        console.log(lines);
+        for (let i = 0; i < lines.length; i++) { lines[i].style.backgroundColor = "rgba(40, 40, 60, 0.75)"; }
+
+        // Text wrappers
+        const textWrappers = document.getElementsByClassName("planeTextWrapper");
+        for (let i = 0; i < textWrappers.length; i++) {
+            textWrappers[i].style.backgroundColor = "rgb(50, 50, 50)";
+            textWrappers[i].style.border = "1px solid rgb(100, 100, 100)";
+            textWrappers[i].style.color = "rgb(255, 255, 255)";
+        }
         
         // Skills
         document.getElementById("skills").classList.add("dark");
@@ -409,6 +418,18 @@ function aboutPlanes(isOn) {
         // Plane lights
         const planeWingLights = document.getElementsByClassName("planeWingLight");
         for (let i = 0; i < planeWingLights.length; i++) { planeWingLights[i].classList.remove('random1', 'random2', 'random3', 'random4'); }
+
+        // Lines
+        const lines = document.getElementsByClassName("line");
+        for (let i = 0; i < lines.length; i++) { lines[i].style.backgroundColor = "rgba(200, 200, 200)"; }
+
+        // Text wrappers
+        const textWrappers = document.getElementsByClassName("planeTextWrapper");
+        for (let i = 0; i < textWrappers.length; i++) {
+            textWrappers[i].style.backgroundColor = "rgb(225, 225, 225)";
+            textWrappers[i].style.border = "1px solid rgb(0, 0, 0)";
+            textWrappers[i].style.color = "rgb(0, 0, 0)";
+        }
 
         // Skills
         document.getElementById("skills").classList.remove("dark");

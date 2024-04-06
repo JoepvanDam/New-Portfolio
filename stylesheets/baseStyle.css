@@ -1,6 +1,6 @@
 * {
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.05);
-    transition: all 1s, font-size 0s;
+    transition: all 1s, font-size 0s, color 0s;
     user-select: none;
 }
 
