@@ -50,6 +50,10 @@ export default function switchTabs(tabNum) {
     if (planeActive[1]) { sendPlane(5); }
     if (planeActive[2]) { sendPlane(6); }
 
+    // Remove test_skill_parts if they are in view
+    const testSkillParts = Array.from(document.getElementsByClassName("test_skill_part"));
+    for (let i = 0; i < testSkillParts.length; i++) { testSkillParts[i].style.left = "calc(100% + 1000px)"; }
+
     if (tabNum == 0) {
         // House in view
         house.style.right = 'calc(50% - 200px)';

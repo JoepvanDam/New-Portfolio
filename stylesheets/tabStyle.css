@@ -44,6 +44,3 @@
     color: rgb(60, 60, 60) !important;
     opacity: 0;
 }
-.inactiveTab:hover {
-    cursor: not-allowed !important;
-}

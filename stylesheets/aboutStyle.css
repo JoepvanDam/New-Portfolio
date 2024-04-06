@@ -151,88 +151,83 @@
     height: 24px;
     width: 10vw;
     box-sizing: border-box;
+    transition: all 1s, opacity 0s;
 }
 
 .skill.hide .skill_part { width: 0px; }
 
-#skills.dark .skill_part1 {
-    border-top: 10px solid rgba(255, 0, 0, 0.25);
-    border-bottom: 10px solid rgba(255, 0, 0, 0.25);
+.dark .skill_part1, .dark .test_skill_part1 {
+    border-top: 10px solid rgba(255, 0, 0, 0.1);
+    border-bottom: 10px solid rgba(255, 0, 0, 0.1);
 }
-#skills.dark .skill_part2 {
-    border-top: 10px solid rgba(255, 64, 0, 0.25);
-    border-bottom: 10px solid rgba(255, 64, 0, 0.25);
+.dark .skill_part2, .dark .test_skill_part2 {
+    border-top: 10px solid rgba(255, 64, 0, 0.15);
+    border-bottom: 10px solid rgba(255, 64, 0, 0.15);
 }
-#skills.dark .skill_part3 {
-    border-top: 10px solid rgba(255, 128, 0, 0.25);
-    border-bottom: 10px solid rgba(255, 128, 0, 0.25);
+.dark .skill_part3, .dark .test_skill_part3 {
+    border-top: 10px solid rgba(255, 128, 0, 0.2);
+    border-bottom: 10px solid rgba(255, 128, 0, 0.2);
 }
-#skills.dark .skill_part4 {
+.dark .skill_part4, .dark .test_skill_part4 {
     border-top: 10px solid rgba(255, 191, 0, 0.25);
     border-bottom: 10px solid rgba(255, 191, 0, 0.25);
 }
-#skills.dark .skill_part5 {
-    border-top: 10px solid rgba(255, 255, 0, 0.25);
-    border-bottom: 10px solid rgba(255, 255, 0, 0.25);
+.dark .skill_part5, .dark .test_skill_part5 {
+    border-top: 10px solid rgba(255, 255, 0, 0.3);
+    border-bottom: 10px solid rgba(255, 255, 0, 0.3);
 }
-#skills.dark .skill_part6 {
-    border-top: 10px solid rgba(191, 255, 0, 0.25);
-    border-bottom: 10px solid rgba(191, 255, 0, 0.25);
+.dark .skill_part6, .dark .test_skill_part6 {
+    border-top: 10px solid rgba(191, 255, 0, 0.35);
+    border-bottom: 10px solid rgba(191, 255, 0, 0.35);
 }
-#skills.dark .skill_part7 {
-    border-top: 10px solid rgba(128, 255, 0, 0.25);
-    border-bottom: 10px solid rgba(128, 255, 0, 0.25);
+.dark .skill_part7, .dark .test_skill_part7 {
+    border-top: 10px solid rgba(128, 255, 0, 0.4);
+    border-bottom: 10px solid rgba(128, 255, 0, 0.4);
 }
-#skills.dark .skill_part8 {
-    border-top: 10px solid rgba(64, 255, 0, 0.25);
-    border-bottom: 10px solid rgba(64, 255, 0, 0.25);
-}
-#skills.dark .skill_part9 {
-    border-top: 10px solid rgba(0, 255, 0, 0.25);
-    border-bottom: 10px solid rgba(0, 255, 0, 0.25);
-}
-#skills.dark .skill_part10 {
-    border-top: 10px solid rgba(0, 191, 0, 0.25);
-    border-bottom: 10px solid rgba(0, 191, 0, 0.25);
+.dark .skill_part8, .dark .test_skill_part8{
+    border-top: 10px solid rgba(64, 255, 0, 0.45);
+    border-bottom: 10px solid rgba(64, 255, 0, 0.45);
 }
 
-#skills.light .skill_part1 {
-    border-top: 10px solid rgba(255, 0, 0, 0.5);
-    border-bottom: 10px solid rgba(255, 0, 0, 0.5);
+.light .skill_part1, .light .test_skill_part1{
+    border-top: 10px solid rgba(255, 0, 0, 0.4);
+    border-bottom: 10px solid rgba(255, 0, 0, 0.4);
 }
-#skills.light .skill_part2 {
-    border-top: 10px solid rgba(255, 64, 0, 0.5);
-    border-bottom: 10px solid rgba(255, 64, 0, 0.5);
+.light .skill_part2, .light .test_skill_part2{
+    border-top: 10px solid rgba(255, 64, 0, 0.45);
+    border-bottom: 10px solid rgba(255, 64, 0, 0.45);
 }
-#skills.light .skill_part3 {
+.light .skill_part3, .light .test_skill_part3{
     border-top: 10px solid rgba(255, 128, 0, 0.5);
     border-bottom: 10px solid rgba(255, 128, 0, 0.5);
 }
-#skills.light .skill_part4 {
-    border-top: 10px solid rgba(255, 191, 0, 0.5);
-    border-bottom: 10px solid rgba(255, 191, 0, 0.5);
+.light .skill_part4, .light .test_skill_part4{
+    border-top: 10px solid rgba(255, 191, 0, 0.55);
+    border-bottom: 10px solid rgba(255, 191, 0, 0.55);
 }
-#skills.light .skill_part5 {
-    border-top: 10px solid rgba(255, 255, 0, 0.5);
-    border-bottom: 10px solid rgba(255, 255, 0, 0.5);
+.light .skill_part5, .light .test_skill_part5{
+    border-top: 10px solid rgba(255, 255, 0, 0.6);
+    border-bottom: 10px solid rgba(255, 255, 0, 0.6);
 }
-#skills.light .skill_part6 {
-    border-top: 10px solid rgba(191, 255, 0, 0.5);
-    border-bottom: 10px solid rgba(191, 255, 0, 0.5);
+.light .skill_part6, .light .test_skill_part6{
+    border-top: 10px solid rgba(191, 255, 0, 0.65);
+    border-bottom: 10px solid rgba(191, 255, 0, 0.65);
 }
-#skills.light .skill_part7 {
-    border-top: 10px solid rgba(128, 255, 0, 0.5);
-    border-bottom: 10px solid rgba(128, 255, 0, 0.5);
+.light .skill_part7, .light .test_skill_part7{
+    border-top: 10px solid rgba(128, 255, 0, 0.7);
+    border-bottom: 10px solid rgba(128, 255, 0, 0.7);
 }
-#skills.light .skill_part8 {
+.light .skill_part8, .light .test_skill_part8{
     border-top: 10px solid rgba(64, 255, 0, 0.5);
     border-bottom: 10px solid rgba(64, 255, 0, 0.5);
 }
-#skills.light .skill_part9 {
-    border-top: 10px solid rgba(0, 255, 0, 0.5);
-    border-bottom: 10px solid rgba(0, 255, 0, 0.5);
-}
-#skills.light .skill_part10 {
-    border-top: 10px solid rgba(0, 191, 0, 0.5);
-    border-bottom: 10px solid rgba(0, 191, 0, 0.5);
-}
+
+.test_skill_part1, .test_skill_part2, .test_skill_part3, .test_skill_part4, .test_skill_part5, .test_skill_part6, .test_skill_part7, .test_skill_part8 { transition: all 2s, left 1s; }
+.test_skill_part1 { transition-delay: all 0s, left 0s; }
+.test_skill_part2 { transition-delay: all 0.5s, left 0s; }
+.test_skill_part3 { transition-delay: all 1s, left 0s; }
+.test_skill_part4 { transition-delay: all 1.5s, left 0s; }
+.test_skill_part5 { transition-delay: all 2s, left 0s; }
+.test_skill_part6 { transition-delay: all 2.5s, left 0s; }
+.test_skill_part7 { transition-delay: all 3s, left 0s; }
+.test_skill_part8 { transition-delay: all 3.5s, left 0s; }
