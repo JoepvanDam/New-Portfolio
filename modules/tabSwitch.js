@@ -1,4 +1,4 @@
-import sendPlane from "./planes.js";
+import { planeActive } from "./planes.js";
 
 var currentTab = 0, moving = false;
 export default function switchTabs(tabNum) {
@@ -45,6 +45,11 @@ export default function switchTabs(tabNum) {
     // 3
     // House Projects About | Contact |
 
+    // Remove planes if they are in view
+    if (planeActive[0]) { sendPlane(4); }
+    if (planeActive[1]) { sendPlane(5); }
+    if (planeActive[2]) { sendPlane(6); }
+
     if (tabNum == 0) {
         // House in view
         house.style.right = 'calc(50% - 200px)';
@@ -58,7 +63,6 @@ export default function switchTabs(tabNum) {
         // About right 2
         planeTower.style.right = "calc(-150% + 250px)";
         planeControl.style.right = "calc(-150% + 250px)";
-        sendPlane(4); sendPlane(5); sendPlane(6);
 
         // Contact right 3
 
@@ -78,7 +82,6 @@ export default function switchTabs(tabNum) {
         // About right 1
         planeTower.style.right = "calc(-50% + 250px)";
         planeControl.style.right = "calc(-50% + 250px)";
-        sendPlane(4); sendPlane(5); sendPlane(6);
 
         // Contact right 2
 
@@ -99,7 +102,6 @@ export default function switchTabs(tabNum) {
         planeTower.style.right = "calc(15% - 250px)";
         planeControl.style.right = "calc(50% - 250px)";
         sendPlaneWrapper.style.right = "";
-        sendPlane(4); sendPlane(5); sendPlane(6);
 
         // Contact right 1
 
@@ -120,7 +122,6 @@ export default function switchTabs(tabNum) {
         planeTower.style.right = "calc(115% - 250px)";
         planeControl.style.right = "calc(150% - 250px)";
         sendPlaneWrapper.style.right = "calc(150% - 250px)";
-        sendPlane(4); sendPlane(5); sendPlane(6);
 
         // Contact in view
 

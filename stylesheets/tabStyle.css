@@ -35,7 +35,15 @@
     color: rgb(0, 0, 0);
 }
 
-.tab:not(.currentTab):hover {
+.tab:not(.currentTab):not(.inactiveTab):hover {
     cursor: pointer;
     transform: scale(1.1);
+}
+
+.inactiveTab {
+    color: rgb(60, 60, 60) !important;
+    opacity: 0;
+}
+.inactiveTab:hover {
+    cursor: not-allowed !important;
 }

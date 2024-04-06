@@ -1,8 +1,19 @@
-var flying = false;
-export default function sendPlane(num) {
+var flying = false, planeActive = [false, false, false];
+function sendPlane(num) {
+    const tabs = document.getElementsByClassName("tab");
     if (flying) return;
-    flying = true;
-    setTimeout(() => { flying = false; }, 3000);
+    flying = true; 
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].setAttribute("onclick", "");
+        tabs[i].classList.add("inactiveTab");
+    }
+    setTimeout(() => {
+        flying = false;
+        for (let i = 0; i < tabs.length; i++) {
+            tabs[i].setAttribute("onclick", `switchTabs(${i})`);
+            tabs[i].classList.remove("inactiveTab");
+        }
+    }, 3000);
 
     // Get all vars
     const buttonWrappers = document.getElementsByClassName("planeControlButtonWrapper");
@@ -11,6 +22,7 @@ export default function sendPlane(num) {
     const buttons = document.getElementsByClassName("planeControlButton");
     const basicInfo = document.getElementById("basicInfo");
     const interests = document.getElementById("interests");
+    
 
     // Set all buttons to inactive
     for (let i = 0; i < buttons.length; i++) { buttons[i].classList.add('inactivePlaneControlButton'); buttons[i].classList.remove('activePlaneControlButton'); }
@@ -22,14 +34,17 @@ export default function sendPlane(num) {
 
     // 1/2/3: send chosen plane
     if (num == 1) {
+        planeActive[0] = true;
         basicInfo.style.left = "calc(50% - 410px)";
         setTimeout(() => { planeControlDisplay.innerHTML = "Info Plane"; }, 3000);
         controlButton4.setAttribute("onclick", "sendPlane(4)");
     } else if (num == 2) {
+        planeActive[1] = true;
         interests.style.left = "calc(50% - 410px)";
         setTimeout(() => { planeControlDisplay.innerHTML = "Interests Plane"; }, 3000);
         controlButton4.setAttribute("onclick", "sendPlane(5)");
     } else if (num == 3) {
+        planeActive[2] = true;
         var skillsPlanes = document.getElementsByClassName("skill");
         for (let i = 0; i < skillsPlanes.length; i++) { skillsPlanes[i].style.left = "-100px"; skillsPlanes[i].classList.add('hide'); }
 
@@ -57,6 +72,7 @@ export default function sendPlane(num) {
         controlButton4.setAttribute("onclick", "sendPlane(6)");
     } // 4/5/6: return chosen plane
     else if (num == 4) {
+        planeActive[0] = false;
         planeControlDisplay.innerHTML = "Plane clearing airspace...";
         for (let i = 0; i < buttons.length; i++) { buttons[i].classList.add('activePlaneControlButton'); buttons[i].classList.remove('inactivePlaneControlButton'); }
         buttons[3].classList.add('inactivePlaneControlButton');
@@ -71,6 +87,7 @@ export default function sendPlane(num) {
             planeControlDisplay.innerHTML = "Select a plane to send";
         }, 3000);
     } else if (num == 5) {
+        planeActive[1] = false;
         planeControlDisplay.innerHTML = "Plane clearing airspace...";
         for (let i = 0; i < buttons.length; i++) { buttons[i].classList.add('activePlaneControlButton'); buttons[i].classList.remove('inactivePlaneControlButton'); }
         buttons[3].classList.add('inactivePlaneControlButton');
@@ -85,6 +102,7 @@ export default function sendPlane(num) {
             planeControlDisplay.innerHTML = "Select a plane to send";
         }, 3000);
     } else if (num == 6) {
+        planeActive[2] = false;
         planeControlDisplay.innerHTML = "Plane clearing airspace...";
         for (let i = 0; i < buttons.length; i++) { buttons[i].classList.add('activePlaneControlButton'); buttons[i].classList.remove('inactivePlaneControlButton'); }
         buttons[3].classList.add('inactivePlaneControlButton');
@@ -114,3 +132,5 @@ export default function sendPlane(num) {
         }, 3000);
     }
 }
+
+export { sendPlane, planeActive }

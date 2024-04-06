@@ -7,8 +7,8 @@ import darkModeSwitch from "./modules/darkmode.js";
 import setMoonPhase from "./modules/moonPhase.js";
 import openSettings from "./modules/settings.js";
 import switchTabs from "./modules/tabSwitch.js";
+import { sendPlane } from "./modules/planes.js";
 import updateDates from "./modules/dates.js";
-import sendPlane from "./modules/planes.js";
 
 // Adding necessary functions to scope
 window.updateStickyTalks = updateStickyTalks;

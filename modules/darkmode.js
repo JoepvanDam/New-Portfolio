@@ -394,7 +394,6 @@ function aboutPlanes(isOn) {
 
         // Lines
         const lines = document.getElementsByClassName("line");
-        console.log(lines);
         for (let i = 0; i < lines.length; i++) { lines[i].style.backgroundColor = "rgba(40, 40, 60, 0.75)"; }
 
         // Text wrappers
