@@ -347,7 +347,7 @@ function projectsDark(isOn) {
         const windows = Array.from(document.getElementsByClassName("projectWindow"));
         for (let i = 0; i < windows.length; i++) { windows[i].style.backgroundColor = "rgb(75, 75, 75)"; }
         for (let i = 0; i < windows.length; i++) {
-            const randomTime = Math.floor(Math.random() * (5000 - 500 + 1) + 500);
+            const randomTime = Math.floor(Math.random() * (3000 - 500 + 1) + 500);
             setTimeout(() => {
                 const randomIndex = Math.floor(Math.random() * windows.length);
                 windows[randomIndex].style.backgroundColor = "rgb(125, 125, 75)";
