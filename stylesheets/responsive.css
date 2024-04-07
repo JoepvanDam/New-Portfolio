@@ -1,0 +1,13 @@
+/* If portrait, hide tabs and show portrait ID */
+@media screen and (orientation: portrait) {
+    #tabs { display: none; }
+    #portrait { display: block; }
+}
+
+
+@media screen and (max-width: 1000px) {
+    #house { transform: translate(0, 10px) scale(0.9); }
+    #sticky { transform: translate(10px, 10px) scale(0.9); }
+    #langChange { transform: translate(0, 20px) scale(0.9); }
+    #lamp { transform: translate(0, 20px) scale(0.9); }
+}

@@ -1,7 +1,7 @@
 import { planeActive } from "./planes.js";
 
 var currentTab = 0, moving = false;
-export default function switchTabs(tabNum) {
+function switchTabs(tabNum) {
     if (currentTab == tabNum || moving) { return }
     currentTab = tabNum;
     moving = true;
@@ -59,7 +59,7 @@ export default function switchTabs(tabNum) {
         house.style.right = 'calc(50% - 200px)';
         lamp.style.right = 'calc(30% - 100px)';
         langchange.style.left = '50px';
-        sticky.style.right = 'calc(50% + 27.5px)';
+        sticky.style.right = 'calc(50% + 47.5px)';
 
         // Projects right 1
         projectFlat.style.right = "calc(-50% + 250px)";
@@ -137,3 +137,16 @@ export default function switchTabs(tabNum) {
         tab4.classList.add("currentTab");
     }
 }
+
+function nextTab(direction) {
+    if (direction == "left") {
+        if (currentTab == 0) { switchTabs(3); }
+        else { switchTabs(currentTab - 1); }
+    }
+    else if (direction == "right") {
+        if (currentTab == 3) { switchTabs(0); }
+        else { switchTabs(currentTab + 1); }
+    }
+}
+
+export { nextTab, switchTabs };

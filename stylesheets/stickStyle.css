@@ -6,10 +6,9 @@
     justify-content: center;
     place-items: center;
     grid-template-columns: repeat(4, 1fr);
-    bottom: 30px;
-    right: calc(50% + 27.5px);
+    bottom: 45px;
+    right: calc(50% + 47.5px);
     z-index: 11;
-    transform: scale(0.8);
 }
 
 #stickyTalks1 {

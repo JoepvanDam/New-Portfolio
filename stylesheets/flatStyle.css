@@ -2,6 +2,7 @@
     position: absolute;
     bottom: 45px;
     right: calc(-40% - 250px);
+    transform: translate(0, -50px) scale(1.2);
     z-index: 10;
 }
 
