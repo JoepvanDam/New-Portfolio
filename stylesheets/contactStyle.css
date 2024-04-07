@@ -4,6 +4,7 @@
     height: auto;
     bottom: 40px;
     z-index: 10;
+    right: calc(-250% + 20vw);
 }
 
 #linkToGmail, #linkToLinkedIn, #linkToGithub, #linkToGmail rect, #linkToGmail path {

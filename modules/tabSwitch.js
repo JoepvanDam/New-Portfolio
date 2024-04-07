@@ -27,7 +27,7 @@ export default function switchTabs(tabNum) {
     var planeControl = document.getElementById("planeControl");
 
     // Contact page vars
-    // ...
+    var littleBillboard = document.getElementById("littleBillboard");
 
     // Removing currentTab from all tabs
     tab1.classList.remove("currentTab");
@@ -69,6 +69,7 @@ export default function switchTabs(tabNum) {
         planeControl.style.right = "calc(-150% + 250px)";
 
         // Contact right 3
+        littleBillboard.style.right = "calc(-250% + 20vw)";
 
         // Set currentTab to tabNum
         tab1.classList.add("currentTab");
@@ -88,6 +89,7 @@ export default function switchTabs(tabNum) {
         planeControl.style.right = "calc(-50% + 250px)";
 
         // Contact right 2
+        littleBillboard.style.right = "calc(-150% + 20vw)";
 
         // Set currentTab to tabNum
         tab2.classList.add("currentTab");
@@ -108,6 +110,7 @@ export default function switchTabs(tabNum) {
         sendPlaneWrapper.style.right = "";
 
         // Contact right 1
+        littleBillboard.style.right = "calc(-75% + 20vw)";
 
         // Set currentTab to tabNum
         tab3.classList.add("currentTab");
@@ -128,6 +131,7 @@ export default function switchTabs(tabNum) {
         sendPlaneWrapper.style.right = "calc(150% - 250px)";
 
         // Contact in view
+        littleBillboard.style.right = "calc(50% - 20vw)";
 
         // Set currentTab to tabNum
         tab4.classList.add("currentTab");
