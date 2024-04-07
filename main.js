@@ -40,8 +40,9 @@ function checkPortrait() {
 
 // On start
 // darkModeSwitch(true);
+updateLanguage(1);
 updateStickyTalks(0);
-switchTabs(3);
+switchTabs(2);
 checkPortrait();
 switchProjects(0);
 updateDates();

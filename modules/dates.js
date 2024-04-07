@@ -10,13 +10,31 @@ export default function updateDates() {
     if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) { age--; }
     age1.innerHTML = age;
 
+    // Get language
+    var currentLan;
+    const UKFlag = document.getElementById("settingUKFlag");
+    if (UKFlag.classList.contains("settingCurrentFlag")) { currentLan = 0; }
+    else { currentLan = 1; }
+
     // Update year in study
     var studyYear = document.getElementById("studyYears");
     var years = today.getFullYear() - 2022;
-    if (years == 1) { studyYear.innerHTML = "first"; }
-    else if (years == 2) { studyYear.innerHTML = "second"; }
-    else if (years == 3) { studyYear.innerHTML = "third"; }
-    else if (years == 4) { studyYear.innerHTML = "fourth"; }
+    if (years == 1) {
+        if (currentLan == 0) { studyYear.innerHTML = "first"; }
+        else if (currentLan == 1) { studyYear.innerHTML = "eerste"; }
+    }
+    else if (years == 2) {
+        if (currentLan == 0) { studyYear.innerHTML = "second"; }
+        else if (currentLan == 1) { studyYear.innerHTML = "tweede"; }
+    }
+    else if (years == 3) {
+        if (currentLan == 0) { studyYear.innerHTML = "third"; }
+        else if (currentLan == 1) { studyYear.innerHTML = "derde"; }
+    }
+    else if (years == 4) {
+        if (currentLan == 0) { studyYear.innerHTML = "fourth"; }
+        else if (currentLan == 1) { studyYear.innerHTML = "vierde"; }
+    }
 
     // Run darkmode if time is between 8pm and 8am
     var hours = today.getHours();
