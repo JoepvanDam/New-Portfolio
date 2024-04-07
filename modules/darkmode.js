@@ -24,6 +24,7 @@ export default function darkModeSwitch(onOff) {
             projectsDark(true); // Make projects dark
             aboutPlanes(true); // Make about planes dark
             aboutMisc(true); // Make about misc dark
+            contactDark(true); // Make contact dark
             background('lightBG', 'redBG', 'darkBG'); // Change background to dark
         }, 500);
 
@@ -58,6 +59,7 @@ export default function darkModeSwitch(onOff) {
             projectsDark(false); // Make projects light
             aboutPlanes(false); // Make about planes light
             aboutMisc(false); // Make about misc light
+            contactDark(false); // Make contact light
             background('darkBG', 'redBG', 'lightBG'); // Change background to light
         }, 500);
 
@@ -468,5 +470,45 @@ function aboutMisc(isOn) {
 
         // Tower
         document.getElementById("planeTower").style.opacity = 1;
+    }
+}
+
+// Contact billboard
+function contactDark(isOn) {
+    const billboardSupportLeft = document.getElementById("billboardSupportLeft");
+    const billboardSupportRight = document.getElementById("billboardSupportRight");
+    const aboveBillboard = document.getElementById("aboveBillboard");
+    const billboardRectangle = document.getElementById("billboardRectangle");
+    const billboardSupportLeftStand = document.getElementById("billboardSupportLeftStand");
+    const billboardSupportRightStand = document.getElementById("billboardSupportRightStand");
+    const billboardLight1 = document.getElementById("billboardLight1");
+    const billboardLight2 = document.getElementById("billboardLight2");
+    const billboardLight3 = document.getElementById("billboardLight3");
+    const billboardLight4 = document.getElementById("billboardLight4");
+    const billboardLight5 = document.getElementById("billboardLight5");
+    const allLights = [billboardLight1, billboardLight2, billboardLight3, billboardLight4, billboardLight5];
+    if (isOn) { // Dark mode on
+        billboardSupportLeft.style.fill = "#2F2F2F";
+        billboardSupportRight.style.fill = "#2F2F2F";
+        aboveBillboard.style.fill = "#3F3F3F";
+        billboardRectangle.style.fill = "#4F4F4F";
+        billboardSupportLeftStand.style.fill = "#1F1F1F";
+        billboardSupportRightStand.style.fill = "#1F1F1F";
+        for (let i = 0; i < allLights.length; i++) {
+            const randomTime = Math.floor(Math.random() * (2000 - 200 + 1) + 200);
+            setTimeout(() => {
+                const randomIndex = Math.floor(Math.random() * allLights.length);
+                allLights[randomIndex].style.fill = "rgb(175, 175, 100)";
+                allLights.splice(randomIndex, 1);
+            }, randomTime);
+        }
+    } else { // Dark mode off
+        billboardSupportLeft.style.fill = "#717171";
+        billboardSupportRight.style.fill = "#717171";
+        aboveBillboard.style.fill = "#ABABAB";
+        billboardRectangle.style.fill = "#C2C2C2";
+        billboardSupportLeftStand.style.fill = "#4F4F4F";
+        billboardSupportRightStand.style.fill = "#4F4F4F";
+        for (let i = 0; i < allLights.length; i++) { allLights[i].style.fill = "#989898"; }
     }
 }
