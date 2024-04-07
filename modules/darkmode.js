@@ -118,7 +118,7 @@ function pauseSwitch() {
 function houseDark(isOn) {
     if (isOn) { // Dark mode on
         // Floor 
-        document.getElementById("floor").style.backgroundColor = "rgb(0, 50, 0)";
+        document.getElementById("floor").style.backgroundColor = "rgb(60, 60, 60)";
 
         // House
         document.getElementById("mainHouse").style.backgroundColor = "rgb(75, 75, 75)";
@@ -165,7 +165,7 @@ function houseDark(isOn) {
     }
     else { // Dark mode off
         // Floor 
-        document.getElementById("floor").style.backgroundColor = "rgb(0, 150, 0)";
+        document.getElementById("floor").style.backgroundColor = "rgb(175, 175, 175)";
 
         // House
         document.getElementById("mainHouse").style.backgroundColor = "rgb(125, 125, 125)";

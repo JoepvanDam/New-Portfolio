@@ -18,7 +18,7 @@
     background-color: rgb(200, 200, 200);
     border: 1px solid black;
     border-radius: 50px 50px 0 0;
-    z-index: 100;
+    z-index: 1;
 }
 
 #planeControlDisplay {
