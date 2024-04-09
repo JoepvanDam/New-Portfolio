@@ -10,9 +10,14 @@ function checkKey(e) {
 }
 
 addEventListener('wheel', (event) => {
-    if (event.deltaY > 0) { nextTab('right'); } // Scrollwheel down
-    else { nextTab('left'); } // Scrollwheel up
-})
+    const targetElement = event.target;
+    const specificElement = document.getElementById("projectInfoDesc");
+
+    if (targetElement !== specificElement && targetElement.parentElement !== specificElement && targetElement.parentElement.parentElement !== specificElement) {
+        if (event.deltaY > 0) {  nextTab('right'); } // Scrollwheel down
+        else {  nextTab('left'); } // Scrollwheel up 
+    }
+});
 
 // Scrolling for mobile (touch)
 let touchStartX = 0; let touchEndX = 0;
