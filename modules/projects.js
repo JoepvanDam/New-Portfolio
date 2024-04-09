@@ -287,7 +287,7 @@ function openProject(index, change = false) {
                     <span class='tag js'>JS</span>
                 </p>
                 <p class='links'>
-                    <a class='link' href='PLACEHOLDER' target='_blank'>GitHub</a>
+                    <a class='link' href='https://github.com/JoepvanDam/New-Portfolio' target='_blank'>GitHub</a>
                 </p>
                 <p>
                     This is the website you are currently on. I made this to replace my <a href='https://joepvandam.github.io/portfolio/' target='_blank'>first portfolio website</a>. Although I am proud of the first one, I wanted to make a new one that is more modern, more responsive, and more user-friendly - while retaining the same style. This website is still a work in progress, so expect some changes in the future.
