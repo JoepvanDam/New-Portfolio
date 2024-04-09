@@ -306,6 +306,9 @@ function openProject(index, change = false) {
                     <span class='tag css'>CSS</span>
                     <span class='tag js'>JS</span>
                 </p>
+                <p class='links'>
+                    <a class='link' href='https://github.com/JoepvanDam/New-Portfolio' target='_blank'>GitHub</a>
+                </p>
                 <p>
                     Dit is de website waar je nu op zit. Ik heb deze gemaakt om mijn <a href='https://joepvandam.github.io/portfolio/' target='_blank'>eerste portfolio website</a> te vervangen. Hoewel ik trots ben op de eerste, wilde ik een nieuwe maken die moderner is, meer responsive, en gebruiksvriendelijker - terwijl ik dezelfde stijl behoud. Deze website is nog wel in ontwikkeling, dus verwacht wat veranderingen in de toekomst.
                 </p>
